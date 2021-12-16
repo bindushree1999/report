@@ -1,0 +1,105 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "flipcart",
+    "description": "ordering the product from flipcart",
+    "version": "1.0"
+  },
+  "paths": {
+    "/login to account": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "user name": "Bindushree",
+                  "Passwaord": "97438"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "login successful"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ordering for the product": {
+      "put": {
+        "description": "ordering the watch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "product name": "Titan",
+                  "product id": "12354",
+                  "product price": "5000",
+                  "Address": "vijaynagar mysuru",
+                  "payment": "Cash on delivery",
+                  "message": "notification"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "Order sucessfully completed"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Failure cases (login)": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "user name": "anu",
+                  "Passwaord": "1230"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "unauthorised user": null
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
