@@ -1,0 +1,76 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "student",
+    "description": "student attendence",
+    "version": "1.0"
+  },
+  "paths": {
+    "/student attendence": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "studebt id": "100",
+                  "student name": "bindu",
+                  "branch": "E&C",
+                  "status": "P"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "status": 200,
+                    "message": "present in the class"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/failure case": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "student id": "101",
+                  "student name": "manu",
+                  "branch": "CS",
+                  "status": "A"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "status": 100,
+                    "message": "Absent in the class"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
